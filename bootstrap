@@ -1,0 +1,4 @@
+#!/bin/bash
+ln -s git/gitignore ../.gitignore
+ln -s git/gitconfig ../.gitconfig
+
