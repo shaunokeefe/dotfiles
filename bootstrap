@@ -1,8 +1,13 @@
 #!/bin/bash
 DOTFILES_DIR=$HOME/dotfiles
-ln -sf $DOTFILES_DIR/git/gitignore $HOME/.gitignore
-ln -sf $DOTFILES_DIR/git/gitconfig $HOME/.gitconfig
+
+GIT_DIR=$DOTFILES_DIR/git
+ln -sf $GIT_DIR/gitignore $HOME/.gitignore
+ln -sf $GIT_DIR/gitconfig $HOME/.gitconfig
+ln -sf $GIT_DIR/git-completion.bash $HOME/.git-completion.bash
 
 BASH_DIR=$DOTFILES_DIR/bash
 ln -sf $BASH_DIR/bashrc $HOME/.bashrc
+
+brew install hub
 

@@ -1,4 +1,9 @@
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
+
 # git
+eval "$(hub alias -s)"
 alias gap="git add -p"
 alias gl="git log --oneline --pretty"
 alias gf="git fetch origin"
