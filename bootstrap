@@ -1,13 +1,18 @@
 #!/bin/bash
 DOTFILES_DIR=$HOME/dotfiles
 
+# Git
 GIT_DIR=$DOTFILES_DIR/git
 ln -sf $GIT_DIR/gitignore $HOME/.gitignore
 ln -sf $GIT_DIR/gitconfig $HOME/.gitconfig
 ln -sf $GIT_DIR/git-completion.bash $HOME/.git-completion.bash
 
+brew install hub
+
+# Bash
 BASH_DIR=$DOTFILES_DIR/bash
 ln -sf $BASH_DIR/bashrc $HOME/.bashrc
 
-brew install hub
-
+# python
+pip install virtualenv
+pip install virtualenvwrapper
