@@ -1,0 +1,9 @@
+# git
+alias gap="git add -p"
+alias gl="git log --oneline --pretty"
+alias gf="git fetch origin"
+
+# bash
+alias ll="ls -la"
+
+export EDITOR=/usr/bin/vim

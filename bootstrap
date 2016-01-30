@@ -3,3 +3,6 @@ DOTFILES_DIR=$HOME/dotfiles
 ln -sf $DOTFILES_DIR/git/gitignore $HOME/.gitignore
 ln -sf $DOTFILES_DIR/git/gitconfig $HOME/.gitconfig
 
+BASH_DIR=$DOTFILES_DIR/bash
+ln -sf $BASH_DIR/bashrc $HOME/.bashrc
+
