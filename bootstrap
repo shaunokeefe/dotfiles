@@ -1,4 +1,5 @@
 #!/bin/bash
-ln -s git/gitignore ../.gitignore
-ln -s git/gitconfig ../.gitconfig
+DOTFILES_DIR=$HOME/dotfiles
+ln -sf $DOTFILES_DIR/git/gitignore $HOME/.gitignore
+ln -sf $DOTFILES_DIR/git/gitconfig $HOME/.gitconfig
 
