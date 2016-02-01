@@ -30,3 +30,6 @@ source $HOME/.bashrc
 sudo pip install --upgrade pip
 sudo pip install virtualenv
 sudo pip install virtualenvwrapper
+
+# slack
+brew cask install slack
