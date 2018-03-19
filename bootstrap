@@ -43,6 +43,9 @@ BASH_DIR=$DOTFILES_DIR/bash
 ln -sf $BASH_DIR/bashrc $HOME/.bashrc
 ln -sf $BASH_DIR/bashrc $HOME/.bash_profile
 
+# terminal
+brew cask install iterm2
+
 # python
 brew install python
 brew install python3
