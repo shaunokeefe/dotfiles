@@ -89,10 +89,12 @@ defaults write com.apple.dock mru-spaces -bool false
 brew cask install slack
 brew cask install dropbox
 brew cask install skype
+brew cask install evernote
 
 #iterm profiles
 curl -L https://raw.githubusercontent.com/altercation/solarized/master/iterm2-colors-solarized/Solarized%20Dark.itermcolors -o /tmp/SolarizedDark.itermcolors
 curl -L https://raw.githubusercontent.com/altercation/solarized/master/iterm2-colors-solarized/Solarized%20Light.itermcolors -o /tmp/SolarizedLight.itermcolors
 
 # ssh config
+mkdir -p $HOME/.ssh/config
 ln -sf $HOME/Dropbox/config $HOME/.ssh/config
