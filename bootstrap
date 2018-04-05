@@ -183,3 +183,6 @@ brew_install docker-compose-completion
 brew_install kubectl
 curl -Lo /tmp/minikube https://storage.googleapis.com/minikube/releases/v0.14.0/minikube-darwin-amd64 && chmod +x /tmp/minikube && sudo mv /tmp/minikube /usr/local/bin/
 
+# autoenv
+brew_install autoenv
+
