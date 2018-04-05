@@ -51,6 +51,20 @@ ln -sf $BASH_DIR/bashrc $HOME/.bash_profile
 
 # terminal
 brew cask install iterm2
+source $HOME/.bashrc
+
+# Vim
+VIM_DIR=$HOME/.vim
+if [ ! -d $VIM_DIR ]; then
+    mkdir $VIM_DIR
+fi
+(cd $VIM_DIR && git status > /dev/null 2>&1)
+if [ $? -eq 128 ]; then
+    echo "cloning vimconfig"
+    git clone vimconfig $VIM_DIR
+    (cd $VIM_DIR && git submodule update --init)
+fi
+ln -sf $VIM_DIR/vimrc-english $HOME/.vimrc
 
 # python
 brew install python
