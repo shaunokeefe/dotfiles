@@ -145,4 +145,5 @@ fi
 
 
 # ssh config
+mkdir -p $HOME/.ssh/
 ln -sf $HOME/Dropbox/config $HOME/.ssh/config
