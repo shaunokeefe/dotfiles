@@ -36,7 +36,13 @@ ln -sf $GIT_DIR/gitconfig $HOME/.gitconfig
 ln -sf $GIT_DIR/git-completion.bash $HOME/.git-completion.bash
 ln -sf $GIT_DIR/hub-completion.bash $HOME/.hub-completion.bash
 
-brew install hub
+brew_install hub
+if [ ! -d $HOME/.config ]; then
+  mkdir $HOME/.config
+fi
+ln -sf $GIT_DIR/hub-config $HOME/.config/hub
+
+git config --global hub.protocol https
 
 # Bash
 BASH_DIR=$DOTFILES_DIR/bash
