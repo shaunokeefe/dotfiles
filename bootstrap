@@ -125,10 +125,24 @@ cask_install dropbox
 cask_install skype
 cask_install atom
 
+# iterm2
+cask_install iterm2
+#defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/iTerm</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
 
 #iterm profiles
-curl -L https://raw.githubusercontent.com/altercation/solarized/master/iterm2-colors-solarized/Solarized%20Dark.itermcolors -o /tmp/SolarizedDark.itermcolors
-curl -L https://raw.githubusercontent.com/altercation/solarized/master/iterm2-colors-solarized/Solarized%20Light.itermcolors -o /tmp/SolarizedLight.itermcolors
+if [ ! -f /tmp/SolarizedDark.itermcolors ]; then
+  curl -L https://raw.githubusercontent.com/altercation/solarized/master/iterm2-colors-solarized/Solarized%20Dark.itermcolors -o /tmp/SolarizedDark.itermcolors
+fi
+
+if [ ! -f /tmp/SolarizedLight.itermcolors ]; then
+  curl -L https://raw.githubusercontent.com/altercation/solarized/master/iterm2-colors-solarized/Solarized%20Light.itermcolors -o /tmp/SolarizedLight.itermcolors
+fi
+
+# iterm fonts
+if ! [[ $(ls /Users/shaunokeefe/Library/Fonts/ | grep "Meslo LG L DZ Regular for Powerline.otf" >/dev/null 2>&1) ]]; then
+  git clone https://github.com/powerline/fonts.git /tmp/fonts && cd /tmp/fonts && ./install.sh
+fi
+
 
 # ssh config
 ln -sf $HOME/Dropbox/config $HOME/.ssh/config
