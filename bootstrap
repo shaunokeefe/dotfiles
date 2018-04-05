@@ -165,6 +165,13 @@ npm install -g npm@latest
 # Ruby
 brew_install rbenv
 
+function ssh_key {
+  if [ ! -e ~/.ssh/$1 ]; then
+    ssh-keygen -t rsa -b 4096 -C "shaun.okeefe.0@gmail.com" -N "" -f ~/.ssh/$1
+  fi
+}
+
+
 # sublimetext
 cask_install sublime-text
 
