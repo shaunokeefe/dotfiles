@@ -207,3 +207,7 @@ brew install jq
 pip install daff
 # http://csvkit.readthedocs.io/en/1.0.2/
 pip install csvkit
+
+# Vue syntastic setup
+npm install jshint -g
+npm i -g eslint eslint-plugin-vue
