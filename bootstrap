@@ -171,3 +171,8 @@ cask_install sublime-text
 # terraform
 brew_install terraform
 
+# docker
+cask_install docker-toolbox
+brew_install docker-completion
+brew_install docker-compose-completion
+
