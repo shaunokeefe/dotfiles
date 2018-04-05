@@ -164,3 +164,7 @@ if ! nvm list | grep -q "v8\.9\.4"; then
 fi
 
 npm install -g npm@latest
+
+# Ruby
+brew_install rbenv
+
