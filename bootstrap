@@ -168,3 +168,5 @@ npm install -g npm@latest
 # Ruby
 brew_install rbenv
 
+# sublimetext
+cask_install sublime-text
