@@ -1,5 +1,7 @@
 # python
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2.7
+
+export VIRTUALENVWRAPPER_PYTHON=`which python3`
 export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
 
 export WORKON_HOME=$HOME/venvs
