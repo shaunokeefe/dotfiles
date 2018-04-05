@@ -8,6 +8,12 @@ if [ $? -eq 127 ]
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup
 fi
+
+# ?
+brew_install bash-completion
+# https://github.com/Homebrew/homebrew-completions
+brew tap homebrew/completions
+
 brew tap caskroom/cask
 brew tap caskroom/versions
 brew tap homebrew/boneyard

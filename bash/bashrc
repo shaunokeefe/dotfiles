@@ -8,6 +8,10 @@ export WORKON_HOME=$HOME/venvs
 export PROJECT_HOME=$HOME/dev
 source /usr/local/bin/virtualenvwrapper.sh
 
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
