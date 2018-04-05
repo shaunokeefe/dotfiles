@@ -72,6 +72,8 @@ function pip_install {
       pip install $1
   fi
 }
+pip_install powerline-status
+
 # python
 brew_install readline  --universal
 brew_install python --readline --framework
