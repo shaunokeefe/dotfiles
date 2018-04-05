@@ -64,17 +64,24 @@ if [ $? -eq 128 ]; then
 fi
 ln -sf $VIM_DIR/vimrc-english $HOME/.vimrc
 
+
+function pip_install {
+  if [[ $(pip show $1) == 1 ]]; then
+      pip install $1
+  fi
+}
 # python
-brew install python
-brew install python3
-#curl -L https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py
-#python /tmp/get-pip.py
-sudo pip install --upgrade pip
-sudo pip install virtualenv
-sudo pip install virtualenvwrapper
+brew_install readline  --universal
+brew_install python --readline --framework
+brew_install python3 --readline --framework
+pip install --upgrade pip
+pip install --upgrade pip3
+pip_install virtualenv
+pip_install virtualenvwrapper
+pip_install pip-tools
 
 # python dev environment
-sudo pip install cookiecutter
+pip_install cookiecutter
 COOKIECUTTER_DIR=$HOME/.cookicutters
 mkdir $COOKIECUTTER_DIR
 git clone https://github.com/shaunokeefe/python_cli_cookiecutter.git $COOKIECUTTER_DIR/python_cli
@@ -103,10 +110,18 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 # don't automatically re-arrange mission control panes
 defaults write com.apple.dock mru-spaces -bool false
 
+function cask_install {
+    brew cask list | grep $1 > /dev/null 2>&1
+    if [ $? -eq 1 ]; then
+      echo TEST_inner "$1"
+      brew cask install $1
+  fi
+}
 # apps from cask
-brew cask install slack
-brew cask install dropbox
-brew cask install skype
+cask_install slack
+cask_install dropbox
+cask_install skype
+
 
 #iterm profiles
 curl -L https://raw.githubusercontent.com/altercation/solarized/master/iterm2-colors-solarized/Solarized%20Dark.itermcolors -o /tmp/SolarizedDark.itermcolors
