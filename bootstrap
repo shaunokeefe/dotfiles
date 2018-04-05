@@ -126,6 +126,7 @@ brew cask install slack
 brew cask install dropbox
 brew cask install skype
 brew cask install evernote
+cask_install atom
 
 #iterm profiles
 curl -L https://raw.githubusercontent.com/altercation/solarized/master/iterm2-colors-solarized/Solarized%20Dark.itermcolors -o /tmp/SolarizedDark.itermcolors
