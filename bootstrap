@@ -165,6 +165,13 @@ npm install -g npm@latest
 # Ruby
 brew_install rbenv
 
+# heroku
+# https://devcenter.heroku.com/articles/heroku-command-line#download-and-install
+if ! pkgutil --pkgs | grep -q heroku; then
+  curl -L https://s3.amazonaws.com/assets.heroku.com/heroku-toolbelt/heroku-toolbelt.pkg -o /tmp/heroku_toolbelt.pkg
+  sudo installer -pkg /tmp/heroku_toolbelt.pkg -target /
+fi
+
 function ssh_key {
   if [ ! -e ~/.ssh/$1 ]; then
     ssh-keygen -t rsa -b 4096 -C "shaun.okeefe.0@gmail.com" -N "" -f ~/.ssh/$1
