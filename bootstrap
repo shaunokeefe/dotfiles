@@ -170,3 +170,7 @@ brew_install rbenv
 
 # sublimetext
 cask_install sublime-text
+
+# terraform
+brew_install terraform
+
