@@ -123,6 +123,7 @@ function cask_install {
 cask_install slack
 cask_install dropbox
 cask_install skype
+cask_install atom
 
 
 #iterm profiles
