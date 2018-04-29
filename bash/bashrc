@@ -30,3 +30,7 @@ alias gf="git fetch origin"
 alias ll="ls -la"
 
 export EDITOR=/usr/bin/vim
+source /Users/shaunokeefe/dev/stile/operations/bashrc
+
+PATH=$PATH:/Users/shaunokeefe/dev/stile/operations/tools/cfnplus/
+PATH=$PATH:/Users/shaunokeefe/dev/stile/operations/tools/bin/
