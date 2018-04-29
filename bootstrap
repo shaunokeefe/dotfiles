@@ -214,3 +214,6 @@ pip install csvkit
 # Vue syntastic setup
 npm install jshint -g
 npm i -g eslint eslint-plugin-vue
+
+# VSCode
+brew install ctags
