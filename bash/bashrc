@@ -34,10 +34,10 @@ export EDITOR=/usr/bin/vim
 export GOPATH=$HOME/go
 
 alias dc="docker-compose"
-source /Users/shaunokeefe/dev/stile/operations/bashrc
+source /Users/shaunokeefe/dev/dev-environment/operations/bashrc
 
-PATH=$PATH:/Users/shaunokeefe/dev/stile/operations/tools/cfnplus/
-PATH=$PATH:/Users/shaunokeefe/dev/stile/operations/tools/bin/
+PATH=$PATH:/Users/shaunokeefe/dev/dev-environment/operations/tools/cfnplus/
+PATH=$PATH:/Users/shaunokeefe/dev/dev-environment/operations/tools/bin/
 
 alias wsup="aws-vault exec dev -- aws ec2 start-instances --instance-ids i-0501d54af7a58077d"
 alias wsdown="aws-vault exec dev -- aws ec2 stop-instances --instance-ids i-0501d54af7a58077d"
