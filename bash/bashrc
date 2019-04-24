@@ -30,3 +30,5 @@ alias gf="git fetch origin"
 alias ll="ls -la"
 
 export EDITOR=/usr/bin/vim
+
+export GOPATH=$HOME/go
