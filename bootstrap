@@ -49,6 +49,8 @@ BASH_DIR=$DOTFILES_DIR/bash
 ln -sf $BASH_DIR/bashrc $HOME/.bashrc
 ln -sf $BASH_DIR/bashrc $HOME/.bash_profile
 
+# terminal
+brew cask install iterm2
 source $HOME/.bashrc
 
 # Vim
@@ -120,9 +122,10 @@ function cask_install {
   fi
 }
 # apps from cask
-cask_install slack
-cask_install dropbox
-cask_install skype
+brew cask install slack
+brew cask install dropbox
+brew cask install skype
+brew cask install evernote
 cask_install atom
 
 # iterm2
@@ -211,3 +214,8 @@ pip install csvkit
 # Vue syntastic setup
 npm install jshint -g
 npm i -g eslint eslint-plugin-vue
+
+# VSCode
+brew install ctags
+
+pip3 install --user pylint
