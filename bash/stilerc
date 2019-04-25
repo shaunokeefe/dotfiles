@@ -86,3 +86,7 @@ export DEPLOY_DEV_ENV_PATH=/Users/shaunokeefe/dploy
 
 alias consulssh="ssh -L 8500:localhost:8500 consul.au.s522.net"
 
+gkarma() {
+   karma start --fail-on-empty-test-suite --single-run -- --grep="$@"
+}
+
