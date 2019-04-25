@@ -11,18 +11,18 @@ fi
 
 # Install cask
 brew tap caskroom/cask
-brew upgrade brew-cask
 
 # https://github.com/Homebrew/homebrew-completions
-brew_install bash-completion
-brew tap homebrew/completions
+# brew_install bash-completion
+# brew tap homebrew/completions
 
+# This grep doesn't work for programs that are a
+# substring of other programs
 function brew_install {
   if [[ $(brew list | grep $1) == 1 ]]; then
       brew install $1
   fi
 }
-
 
 # ?
 brew tap caskroom/versions
