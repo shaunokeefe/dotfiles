@@ -61,4 +61,13 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+getlast() {
+    fc -ln "$1" "$1" | sed '1s/^[[:space:]]*//'
+}
+
+alias evrc="vim ~/.vimrc"
+alias ebrc="vim ~/.bashrc"
+alias cbs="getlast >> ~/dotfiles/bootstrap"
+alias cbrc="getlast >> ~/.bashrc"
+alias sbrc="source ~/.bashrc"
 . "/Users/shaunokeefe/dotfiles/bash/stilerc"
