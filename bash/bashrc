@@ -70,4 +70,6 @@ alias ebrc="vim ~/.bashrc"
 alias cbs="getlast >> ~/dotfiles/bootstrap"
 alias cbrc="getlast >> ~/.bashrc"
 alias sbrc="source ~/.bashrc"
+
+alias genssh="ssh-keygen -t rsa -b 4096 -C \"shaun.okeefe@stileeducation.com\""
 . "/Users/shaunokeefe/dotfiles/bash/stilerc"
