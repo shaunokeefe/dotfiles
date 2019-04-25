@@ -20,12 +20,40 @@ fi
 
 # git
 eval "$(hub alias -s)"
+alias gs="git status"
+alias glom="git log master.. --oneline"
+alias glo="git log --oneline"
+alias gb="git branch"
+alias gba="git branch -a"
+
 alias gap="git add -p"
-alias gl="git log --oneline --pretty"
-alias gf="git fetch origin"
+
+alias gc="git checkout "
+# TODO(shauno): pop current branch into env variable and make
+# command to switch back into it
+alias gcm="git checkout master"
+alias gfo="git fetch origin"
+alias gf="git fetch"
+alias gpom="git pull origin master"
+alias gpom="git pull origin master"
+
+alias gsl="git stash list"
+alias gsa="git stash drop"
+alias gssp="git stash show -p"
+alias gsd="git stash drop"
+alias gsp="git stash pop"
+
+alias gdc="git diff --cached"
+alias gd="git diff"
+alias gitbranchclean="git branch --merged master | egrep -v \"(^\*|master|dev)\" | xargs git branch -d"
+
+alias gae="^vim^git add"
+
+alias gca="git commit --amend"
 
 # bash
 alias ll="ls -la"
+alias gunstage="git diff  --cached --name-only --diff-filter=ACM . | xargs -L1 git reset HEAD"
 
 export EDITOR=/usr/bin/vim
 source /Users/shaunokeefe/dev/stile/operations/bashrc
