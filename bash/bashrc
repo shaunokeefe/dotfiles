@@ -99,9 +99,6 @@ export PATH="/usr/local/opt/erlang@20/bin:$PATH"
 # tabtab source for slss package
 # uninstall by removing these lines or running `tabtab uninstall slss`
 [ -f /Users/shaunokeefe/node_modules/tabtab/.completions/slss.bash ] && . /Users/shaunokeefe/node_modules/tabtab/.completions/slss.bash
-||||||| merged common ancestors
-PATH=$PATH:/Users/shaunokeefe/dev/stile/operations/tools/cfnplus/
-PATH=$PATH:/Users/shaunokeefe/dev/stile/operations/tools/bin/
 
 alias dc="docker-compose"
 
