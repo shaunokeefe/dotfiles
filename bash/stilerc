@@ -1,0 +1,88 @@
+PATH=$PATH:/Users/shaunokeefe/dev-environment/operations/tools/cfnplus/
+PATH=$PATH:/Users/shaunokeefe/dev-environment/operations/tools/bin/
+PATH=$PATH:/Users/shaunokeefe/Library/Python/3.6/bin/
+
+source /Users/${USER}/dev-environment/operations/bashrc
+alias vdta="vaultdev terraform apply"
+alias vpta="vaultprod terraform apply"
+alias vcta="vaultcorp terraform apply"
+alias vmta="vaultmarketing terraform apply"
+
+
+alias wsup="aws-vault exec dev -- aws ec2 start-instances --instance-ids i-0501d54af7a58077d"
+alias wsdown="aws-vault exec dev -- aws ec2 stop-instances --instance-ids i-0501d54af7a58077d"
+export AWS_VAULT_KEYCHAIN_NAME="login"
+
+alias squizdeploy="vaultprod aws s3 sync s3://stile-squiz-content-prod-staging s3://stile-squiz-content-prod"
+alias squizdeploydr="vaultprod aws s3 sync s3://stile-squiz-content-prod-staging s3://stile-squiz-content-prod --dryrun"
+
+op_ilogin() {
+    eval $(op signin stileapp.1password.com shaun.okeefe@stileeducation.com A3-MNBBPB-2T557V-MCSTE-YHW73-DZH69-8PSPH)
+}
+
+op_flogin() { 
+    eval $(op signin stileapp)
+}
+
+op_login()
+    if [[ -z "${OP_SESSION_stileapp}" ]]; then
+        eval $(op signin stileapp)
+    fi
+
+otp() { 
+    op_login
+    op get totp "AWS Stile"
+}
+
+cotp() { 
+    otp | pbcopy
+}
+
+console_login() {
+    aws-vault login $1 --stdout | pbcopy
+}
+
+# alias ald="aws-vault login dev --stdout | pbcopy"
+# alias alp="aws-vault login prod --stdout | pbcopy"
+# alias alp="aws-vault login prod --stdout | pbcopy"
+# alias alc="aws-vault login corp --stdout | pbcopy"
+# alias alm="aws-vault login marketing --stdout | pbcopy"
+# alias ali="aws-vault login isolated --stdout | pbcopy"
+
+alias ald="console_login dev"
+alias alp="console_login prod"
+alias alc="console_login corp"
+alias alm="console_login marketing"
+alias ali="console_login isolated"
+alias als="console_login staging"
+
+open_vault_profile() {
+   tmp=mktmp
+   $2 > $tmp
+   open -a "Google Chrome" --args --profile-directory="$1" "$tmp"
+}
+alias oald="open_vault_profile \"Profile 2\" ald"
+
+function slbinstances {
+    aws-vault exec prod -- aws autoscaling describe-auto-scaling-groups --auto-scaling-group-names 'au-slb-prod-slbScalingGroup-B7TI5BLM1WR0' | jq -r '.AutoScalingGroups[0].Instances[].InstanceId'
+}
+
+function slblogin {
+    # Read the SLB admin password with chamber, remove the trailing newline, then copy it onto the clipboard
+    chamberprodslbadmin read -q slb admin_password | perl -pe 'chomp' | pbcopy
+
+    slb_instance_ids=( $(slbinstances) )
+    for instance_id in "${slb_instance_ids[@]}"
+    do
+        # Open each URL in Chrome
+        /usr/bin/open -a "/Applications/Google Chrome.app" "http://slb-$instance_id.au.s522.net:1942/"
+    done
+}
+
+alias slb="open http://`dig +short prod-slb.au.s522.net`:1942"
+
+export DEPLOY_DEV_ENV_PATH=/Users/shaunokeefe/dploy
+
+
+alias consulssh="ssh -L 8500:localhost:8500 consul.au.s522.net"
+
