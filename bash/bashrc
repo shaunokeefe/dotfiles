@@ -60,6 +60,9 @@ source /Users/shaunokeefe/dev/stile/operations/bashrc
 
 PATH=$PATH:/Users/shaunokeefe/dev/stile/operations/tools/cfnplus/
 PATH=$PATH:/Users/shaunokeefe/dev/stile/operations/tools/bin/
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 alias wsup="aws-vault exec dev -- aws ec2 start-instances --instance-ids i-0501d54af7a58077d"
 alias wsdown="aws-vault exec dev -- aws ec2 stop-instances --instance-ids i-0501d54af7a58077d"
