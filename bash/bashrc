@@ -72,4 +72,23 @@ alias cbrc="getlast >> ~/.bashrc"
 alias sbrc="source ~/.bashrc"
 
 alias genssh="ssh-keygen -t rsa -b 4096 -C \"shaun.okeefe@stileeducation.com\""
+
+export GOPATH=$HOME/go
+export PATH=/Users/shaunokeefe/go/bin:$PATH
+
+
+eval "$(rbenv init -)"
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[ -f /Users/shaunokeefe/.nvm/versions/node/v9.11.2/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash ] && . /Users/shaunokeefe/.nvm/versions/node/v9.11.2/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[ -f /Users/shaunokeefe/.nvm/versions/node/v9.11.2/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash ] && . /Users/shaunokeefe/.nvm/versions/node/v9.11.2/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash
+export PATH="/usr/local/opt/erlang@20/bin:$PATH"
+
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[ -f /Users/shaunokeefe/node_modules/tabtab/.completions/slss.bash ] && . /Users/shaunokeefe/node_modules/tabtab/.completions/slss.bash
+
 . "/Users/shaunokeefe/dotfiles/bash/stilerc"
